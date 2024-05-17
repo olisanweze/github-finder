@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Search from './components/Search';
@@ -11,8 +11,8 @@ const pageTransition = {
 };
 
 function App() {
-  const token = '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';
-  const options = { headers: { Authorization: `Bearer ${token}`}};
+  const token = process.env.REACT_APP_TOKEN;
+  const options = useMemo(() => ({ headers: { Authorization: `Bearer ${token}`}}), [token]);
 
   return (
     <>
