@@ -12,7 +12,9 @@ const pageTransition = {
 
 function App() {
   const token = process.env.REACT_APP_TOKEN;
-  const options = useMemo(() => ({ headers: { Authorization: `Bearer ${token}`}}), [token]);
+  const options = useMemo(
+    () => ({ headers: { Authorization: `Bearer ${token}`}}), [token]
+  );
 
   return (
     <>
