@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import Search from './components/Search';
+import User from './components/User';
+
+const pageTransition = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  exit: { opacity: 0, transition: { duration: 1.3, ease: "easeInOut" } },
+};
 
 function App() {
+  const token = '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';
+  const options = { headers: { Authorization: `Bearer ${token}`}};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main className='grid p-center'>
+        <AnimatePresence>
+          <Routes>
+            <Route path="/" element={
+              <motion.div 
+                className='container' 
+                initial="initial" 
+                animate="animate" 
+                exit="exit" 
+                variants={pageTransition} 
+                layout
+              >
+                <Search options={options} />
+              </motion.div>
+            }/>
+            <Route path="/user/:username" element={
+              <motion.div 
+                className='container' 
+                initial="initial" 
+                animate="animate" 
+                exit="exit" 
+                variants={pageTransition} 
+                layout
+              >
+                <User options={options} />
+              </motion.div>
+            }/>
+          </Routes>
+        </AnimatePresence>
+      </main>
+    </>
   );
 }
 

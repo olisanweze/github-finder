@@ -1,0 +1,164 @@
+:root {
+  --dark-background: rgb(24 23 32);
+  --input-width: 240px;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  background-color: var(--dark-background);
+}
+
+main {
+  padding: 60px 0;
+  height: 100dvh;
+}
+
+.container {
+  width: min(100% - 30px, 960px);
+  margin-inline: auto;
+}
+
+h1, h2, h3, h4, p, li, a, input, button {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.github-icon {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 100px;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.p-center {
+  place-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.input-wrap {
+  background: linear-gradient(to right, #800080, #026b45);
+  border-radius: 20px;
+  padding: 2px;
+  width: var(--input-width);
+}
+
+.input-inner {
+  background-color: #0a0a0a;
+  border-radius: 20px; 
+}
+
+input {
+  width: var(--input-width);
+  height: 40px;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-color: rgba(255 255 255 0.05);
+}
+
+.search-info {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.user-profile-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user-profile-name {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.stats {
+  margin: 15px 0 25px;
+  gap: 20px;
+  text-align: center;
+}
+
+.stats-highlight, .repo-name {
+  color: #04f29b;
+}
+
+.stats-highlight, .repo-date {
+  font-size: 14px;
+}
+
+.stats-highlight {
+  font-weight: 600;
+}
+
+.stats-name {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+button {
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: #b300b3;
+}
+
+button:hover {
+  background-color: #9a009a;
+}
+
+.repo-list {
+  margin-top: 45px;
+}
+
+.repo-list-container {
+  background-color: rgb(0 0 0 / 0.1);
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.repo-name {
+  cursor: pointer;
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+.repo-name:hover {
+  text-decoration: underline;
+}
+
+.repo-date {
+  color: #a9a9a9;
+  width: 180px;
+}
+
+.repo-description {
+  font-size: 14px;
+}
